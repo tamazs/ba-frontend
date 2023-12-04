@@ -49,6 +49,10 @@
     text-decoration: none;
     color: #000;
   }
+
+  .navbar-nav a:hover {
+    color: var(--c-red);
+  }
   
   .logo-container {
     flex: 0 0 100px; /* Do not grow or shrink, set basis to the logo's width */

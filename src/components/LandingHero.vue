@@ -4,12 +4,17 @@
       <div class="title-holder">
         <h1 class="team-title">KISVÁRDAI KÉZILABDA CLUB</h1>
         <div class="underline"></div>
+        <div class="sponsors">
+            <img :src="hLogo" alt="Hummel logo">
+            <img :src="tLogo" alt="Tippmix logo">
+        </div>
     </div>
     </section>
   </template>
   
   <script setup>
-  // Composition API setup code can go here if needed.
+    import hLogo from '@/assets/hummel.png';
+    import tLogo from '@/assets/tippmix.png';
   </script>
   
   <style>
@@ -33,9 +38,9 @@
     left: 0;
     bottom: 0rem;
     max-width: 100vw;
-    height: 25%;
+    height: auto;
     margin: 0;
-    padding: 3rem 2rem;
+    padding: 1rem 2rem;
     background-color: var(--c-red);
     display: flex;
     flex-direction: column;
@@ -52,6 +57,20 @@
     background-color: white;
     width: 95vw;
     height: 1.4rem;
+  }
+
+  .sponsors {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 95vw;
+    padding-top: 3rem;
+    gap: 20px;
+  }
+
+  .sponsors img {
+    height: 80px;
+    width: auto;
   }
   </style>
   
