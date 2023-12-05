@@ -9,13 +9,17 @@
         <a href="#">VIDEÓK</a>
       </div>
       <div class="logo-container">
-        <img src="/logo.png" alt="Logo" class="navbar-logo">
+        <RouterLink to="/">
+          <img src="/logo.png" alt="Logo" class="navbar-logo">
+        </RouterLink>
       </div>
       <div class="navbar-empty"></div>
     </nav>
   </template>
   
   <script setup>
+import { RouterLink } from 'vue-router';
+
   // Your script setup code will go here if needed.
   </script>
   
