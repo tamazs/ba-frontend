@@ -83,15 +83,13 @@ import linkResolver from '../link-resolver';
     transition: transform 0.5s ease;
     margin-bottom: 10px;
     transition: all 1s;
-    opacity: 0.7;
-  }
-
-  .swiper-slide:hover .image-wrapper {
-    opacity: 1;
+    overflow: hidden;
   }
 
   .category {
     font-size: 1rem;
+    margin: 0;
+    padding-top: 0.3rem;
   }
 
   .date {
@@ -100,7 +98,6 @@ import linkResolver from '../link-resolver';
   }
   
   .title {
-    line-height: 60px;
     text-align: left;
     font-size: 1rem;
   }
@@ -109,7 +106,12 @@ import linkResolver from '../link-resolver';
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s ease;
   }
+
+  .swiper-slide:hover .base-image {
+  transform: scale(1.1); // Scale the image up to 110% of its size
+}
   
   @media(max-width: 767px) {
     .swiper-slide {
