@@ -12,7 +12,12 @@ const router = createRouter({
       path: '/post/:uid',
       name: 'post',
       component: () => import('../views/PostView.vue')
-    }
+    },
+    {
+      path: '/standing',
+      name: 'standing',
+      component: () => import('../views/StandingsView.vue')
+    },
   ]
 })
 
