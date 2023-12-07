@@ -54,11 +54,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: auto;
   }
   
   table {
     width: 70vw;
     border-collapse: collapse;
+    height: 100%;
 
     .highlight-team {
         background-color: var(--c-red);
