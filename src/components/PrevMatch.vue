@@ -27,7 +27,7 @@
   });
   </script>
   
-  <style>
+  <style scoped>
   .team-section {
     position: relative;
     text-align: center;

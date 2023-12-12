@@ -1,12 +1,12 @@
 <template>
     <nav class="navbar">
       <div class="navbar-nav">
-        <a href="#">HÍREK</a>
+        <RouterLink to="/blogs">HÍREK</RouterLink>
         <a href="#">PROGRAM</a>
-        <a href="#">TABELLA</a>
+        <RouterLink to="/standing">TABELLA</RouterLink>
         <a href="#">KLUB</a>
-        <a href="#">KÉPEK</a>
-        <a href="#">VIDEÓK</a>
+        <RouterLink to="/images">KÉPEK</RouterLink>
+        <RouterLink to="/videos">VIDEÓK</RouterLink>
       </div>
       <div class="logo-container">
         <RouterLink to="/">
@@ -23,7 +23,7 @@ import { RouterLink } from 'vue-router';
   // Your script setup code will go here if needed.
   </script>
   
-  <style>
+  <style scoped>
   .navbar {
     position: fixed;
     top: 0;

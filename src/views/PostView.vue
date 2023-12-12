@@ -22,7 +22,7 @@
 
   </script>
   
-  <style>
+  <style scoped>
   .post-section {
     position: relative;
     text-align: center;

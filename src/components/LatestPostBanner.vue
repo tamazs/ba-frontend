@@ -1,11 +1,8 @@
 <template>
-    <section class="team-section" v-if="matchState.match.homeTeam && matchState.match.awayTeam">
+    <section class="team-section">
       <div class="title-holder">
-        <h1 class="team-title">{{ matchState.match.homeTeam.name }}</h1>
+        <h1 class="team-title">Legutóbbi hírek</h1>
         <div class="underline"></div>
-        <h1 class="team-title">{{ matchState.match.awayTeam.name }}</h1>
-        <p>{{ matchState.match.formattedStartDate }}</p>
-        <p>MAGYAR BAJNOKSAG</p>
         <div class="sponsors">
             <img :src="hLogo" alt="Hummel logo">
             <img :src="tLogo" alt="Tippmix logo">
@@ -17,14 +14,6 @@
   <script setup>
     import hLogo from '@/assets/hummel.png';
     import tLogo from '@/assets/tippmix.png';
-    import matches from '../modules/matches';
-    import { onMounted } from 'vue';
-    
-    const { matchState, getNextMatch } = matches();
-
-    onMounted(async () => {
-    await getNextMatch();
-  });
   </script>
   
   <style scoped>
@@ -33,7 +22,7 @@
     text-align: center;
     color: white;
     width: 100vw;
-    height: 80vh;
+    height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
