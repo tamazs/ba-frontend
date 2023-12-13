@@ -13,12 +13,26 @@
   </template>
   
   <script setup>
+  import { watchEffect } from "vue";
     import { usePrismicDocumentByUID, PrismicImage, PrismicRichText } from "@prismicio/vue";
     import { useRoute } from "vue-router";
+    import { useSeoMeta } from '@unhead/vue'
 
     const route = useRoute();
 
     const {data: post } = usePrismicDocumentByUID("poszt", route.params.uid);
+
+    watchEffect(() => {
+    if (post.value) {
+      useSeoMeta({
+        title: post.value.data.cim[0].text + " - Kisvárdai Kézilabda Klub",
+        description: post.value.data.szoveg[0].text,
+        ogDescription: post.value.data.szoveg[0].text,
+        ogTitle: post.value.data.cim[0].text + " - Kisvárdai Kézilabda Klub",
+        ogImage: post.value.data.borito.url
+      });
+    }
+});
 
   </script>
   

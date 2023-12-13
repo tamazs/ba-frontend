@@ -25,7 +25,6 @@ const { data: videos } = useAllPrismicDocumentsByType("video", {
 		{ field: "document.first_publication_date", direction: "desc" }
 	],
 });
-console.log(videos)
 </script>
 
 <style lang="scss" scoped>

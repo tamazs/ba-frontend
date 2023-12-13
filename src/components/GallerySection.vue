@@ -25,7 +25,6 @@ const { data: images } = useAllPrismicDocumentsByType("galeria", {
 		{ field: "document.first_publication_date", direction: "desc" }
 	],
 });
-console.log(images)
 </script>
 
 <style lang="scss" scoped>

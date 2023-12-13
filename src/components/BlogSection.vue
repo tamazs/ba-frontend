@@ -25,7 +25,6 @@ const { data: posts } = useAllPrismicDocumentsByType("poszt", {
 		{ field: "document.first_publication_date", direction: "desc" }
 	],
 });
-console.log(posts)
 </script>
 
 <style lang="scss" scoped>

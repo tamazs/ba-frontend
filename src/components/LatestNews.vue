@@ -17,7 +17,7 @@
   </template>
   
   <script setup>
-  import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
+  import { ref, onMounted, onBeforeUnmount } from 'vue';
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import 'swiper/css';
   import 'swiper/css/navigation';
@@ -25,7 +25,11 @@
   import { PrismicImage, PrismicLink, PrismicText, useAllPrismicDocumentsByType } from '@prismicio/vue';
 import linkResolver from '../link-resolver';
   
-    const { data: posts } = useAllPrismicDocumentsByType("poszt");
+    const { data: posts } = useAllPrismicDocumentsByType("poszt", {
+    orderings: [
+		{ field: "document.first_publication_date", direction: "desc" }
+	],
+});
   
   const slidesPerView = ref(window.innerWidth <= 767 ? 1 : 4);
   
