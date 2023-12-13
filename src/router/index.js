@@ -43,6 +43,11 @@ const router = createRouter({
       name: 'gallery',
       component: () => import('../views/GallerySingleView.vue')
     },
+    {
+      path: '/teams',
+      name: 'teams',
+      component: () => import('../views/TeamsView.vue')
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {

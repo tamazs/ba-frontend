@@ -29,6 +29,7 @@ import linkResolver from '../link-resolver';
     orderings: [
 		{ field: "document.first_publication_date", direction: "desc" }
 	],
+    pageSize: 9
 });
   
   const slidesPerView = ref(window.innerWidth <= 767 ? 1 : 4);
@@ -58,7 +59,7 @@ import linkResolver from '../link-resolver';
     margin-top: 2.5rem;
   }
   .mySwiper {
-    width: 100%;
+    max-width: 100vw;
     height: 100%;
     background-color: white;
     padding: 2rem 1rem;

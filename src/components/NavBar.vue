@@ -4,7 +4,7 @@
         <RouterLink to="/blogs">HÍREK</RouterLink>
         <a href="#">PROGRAM</a>
         <RouterLink to="/standing">TABELLA</RouterLink>
-        <a href="#">KLUB</a>
+        <RouterLink to="/teams">KLUB</RouterLink>
         <RouterLink to="/images">KÉPEK</RouterLink>
         <RouterLink to="/videos">VIDEÓK</RouterLink>
       </div>
@@ -27,47 +27,50 @@ import { RouterLink } from 'vue-router';
   .navbar {
     position: fixed;
     top: 0;
-    background: rgb(255, 255, 255, 0.9);
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: space-between;
-    align-items: stretch; /* Stretch the children to match the height of the navbar */
+    align-items: center; /* Align items vertically */
     height: 10vh;
-    width: 100vw;
     padding: 0.5rem 2rem;
     z-index: 99;
-    overflow: hidden;
-  }
-  
-  .navbar-nav, .navbar-empty {
-    flex: 1;
-    display: flex;
-    align-items: center; /* Align links vertically */
+    background: rgb(255, 255, 255, 0.9); /* Add your desired background color/opacity */
   }
   
   .navbar-nav {
+    display: flex;
     justify-content: flex-start;
+    align-items: center;
     gap: 30px;
   }
   
-  .navbar-nav a {
-    text-decoration: none;
-    color: #000;
-  }
-
-  .navbar-nav a:hover {
-    color: var(--c-red);
-  }
-  
-  .logo-container {
-    flex: 0 0 100px; /* Do not grow or shrink, set basis to the logo's width */
+  .navbar-empty {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
   }
   
+  .logo-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100; /* Ensure the logo stays above other elements */
+  }
+  
   .navbar-logo {
-    max-width: 100%;
-    max-height: 100%;
+    height: 80%; /* Adjust the size of the logo */
+  }
+  
+  .navbar-nav a,
+  .navbar-empty a {
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-nav a:hover {
+    color: var(--c-red);
   }
   </style>
   
