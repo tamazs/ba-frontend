@@ -1,13 +1,13 @@
 <template>
     <div class="grid-container">
-      <router-link to="/placeholder-woman" class="grid-item">
+      <router-link to="/team" class="grid-item">
         <img src="@/assets/team.jpg" alt="Női csapat">
         <p class="overlay-text">Női</p>
       </router-link>
-      <router-link to="/placeholder-man" class="grid-item">
+      <a href="https://www.mksz.hu/sportszervezet/111?alversenyId=320219012&csapatId=3810334508&ev=2023" target="_blank" class="grid-item">
         <img src="@/assets/team_m.jpg" alt="Férfi csapat">
         <p class="overlay-text">Férfi</p>
-      </router-link>
+      </a>
     </div>
   </template>
   

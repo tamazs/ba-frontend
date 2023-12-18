@@ -46,7 +46,7 @@ const getStanding = () => {
 
             // Fetch and assign team images
             for (const teamStanding of standingState.value.standing) {
-                await delay(100); // Delay to prevent rate limiting
+                await delay(300); // Delay to prevent rate limiting
                 teamStanding.team.image = await getTeamImage(teamStanding.team.id);
             }
 

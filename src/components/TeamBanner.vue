@@ -1,7 +1,7 @@
 <template>
     <section class="team-section">
       <div class="title-holder">
-        <h1 class="team-title">Legutóbbi videók</h1>
+        <h1 class="team-title">Női csapat</h1>
         <div class="underline"></div>
         <div class="sponsors">
             <img :src="hLogo" alt="Hummel logo">

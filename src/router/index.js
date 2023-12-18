@@ -48,6 +48,16 @@ const router = createRouter({
       name: 'teams',
       component: () => import('../views/TeamsView.vue')
     },
+    {
+      path: '/team',
+      name: 'team',
+      component: () => import('../views/TeamView.vue')
+    },
+    {
+      path: '/player/:uid',
+      name: 'player',
+      component: () => import('../views/PlayerView.vue')
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
