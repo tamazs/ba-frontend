@@ -50,6 +50,18 @@ import { watchEffect } from "vue";
     const components = defineSliceZoneComponents({
         klub_ok_: PrevTeams
     });
+
+    watchEffect(() => {
+    if (player.value) {
+      useSeoMeta({
+        title: player.value.data.nev[0].text + " - Kisvárdai Kézilabda Klub",
+        description: player.value.data.sztori[0].text,
+        ogDescription: player.value.data.sztori[0].text,
+        ogTitle: player.value.data.nev[0].text + " - Kisvárdai Kézilabda Klub",
+        ogImage: player.value.data.kep.url
+      });
+    }
+});
 </script>
 
 <style lang="scss" scoped>
@@ -67,6 +79,8 @@ import { watchEffect } from "vue";
     font-weight: 700;
     text-transform: uppercase;
     border-bottom: 10px var(--c-red) solid;
+    overflow-wrap: break-word;
+    max-width: 30vw;
 }
 
 .player-infos-row {
