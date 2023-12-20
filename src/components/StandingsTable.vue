@@ -7,12 +7,13 @@
             <th></th>
             <th>Csapat</th>
             <th>Mérkőzések</th>
-            <th>Győzelem</th>
-            <th>Döntetlen</th>
-            <th>Vereség</th>
-            <th>Lőtt gólok</th>
-            <th>Kapott gólok</th>
-            <th>Gólkülönbség</th>
+            <th v-if="windowWidth > 1130">Győzelem</th>
+            <th v-if="windowWidth > 1130">Döntetlen</th>
+            <th v-if="windowWidth > 1130">Vereség</th>
+            <th v-if="windowWidth < 1130">Gólok</th>
+            <th v-if="windowWidth > 1130">Lőtt gólok</th>
+            <th v-if="windowWidth > 1130">Kapott gólok</th>
+            <th v-if="windowWidth > 1130">Gólkülönbség</th>
             <th>Pontszám</th>
           </tr>
         </thead>
@@ -24,12 +25,13 @@
             </td>
             <td class="team-name">{{ team.team.name }}</td>
             <td>{{ team.matches }}</td>
-            <td>{{ team.wins }}</td>
-            <td>{{ team.draws }}</td>
-            <td>{{ team.losses }}</td>
-            <td>{{ team.scoresFor }}</td>
-            <td>{{ team.scoresAgainst }}</td>
-            <td>{{ team.scoresFor - team.scoresAgainst }}</td>
+            <td v-if="windowWidth > 1130">{{ team.wins }}</td>
+            <td v-if="windowWidth > 1130">{{ team.draws }}</td>
+            <td v-if="windowWidth > 1130">{{ team.losses }}</td>
+            <td v-if="windowWidth < 1130">{{ team.scoresFor }}:{{ team.scoresAgainst }}</td>
+            <td v-if="windowWidth > 1130">{{ team.scoresFor }}</td>
+            <td v-if="windowWidth > 1130">{{ team.scoresAgainst }}</td>
+            <td v-if="windowWidth > 1130">{{ team.scoresFor - team.scoresAgainst }}</td>
             <td>{{ team.points }}</td>
           </tr>
         </tbody>
@@ -38,14 +40,25 @@
   </template>
   
   <script setup>
+  import { ref, onMounted, onUnmounted } from 'vue';
   import standing from '../modules/standing';
-  import { onMounted } from 'vue';
+
+  const windowWidth = ref(window.innerWidth);
+
+const handleResize = () => {
+  windowWidth.value = window.innerWidth;
+};
   
   const { standingState, getStandings } = standing();
   
   onMounted(async () => {
     await getStandings();
+    window.addEventListener('resize', handleResize);
   });
+
+  onUnmounted(() => {
+  window.removeEventListener('resize', handleResize);
+});
   </script>
   
   <style lang="scss" scoped>
@@ -55,6 +68,7 @@
     justify-content: center;
     align-items: center;
     height: auto;
+    overflow-x: scroll;
   }
   
   table {

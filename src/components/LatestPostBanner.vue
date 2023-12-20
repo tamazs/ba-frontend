@@ -21,17 +21,18 @@
     position: relative;
     text-align: center;
     color: white;
-    width: 100vw;
+    max-width: 100vw !important;
     height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding-top: 5rem;
     background-color: var(--c-red);
+    overflow-x: hidden;
   }
   
   .title-holder {
-    width: 100%; /* Adjusted width as per your design preference */
+    max-width: 100vw !important; /* Adjusted width as per your design preference */
     height: 100%;
     margin: 0;
     padding: 1rem 2rem;
@@ -40,6 +41,7 @@
     flex-direction: column;
     align-items: flex-start; /* Center align the items */
     justify-content: center;
+    overflow-x: hidden;
   }
 
   .team-title {
@@ -47,6 +49,7 @@
     padding-bottom: 0.5rem;
     font-weight: 700;
     text-transform: uppercase;
+    overflow-x: hidden;
   }
 
   .underline {
@@ -54,6 +57,7 @@
     width: 95vw; /* Adjusted width as per your design preference */
     height: 1.4rem;
     margin-top: 0.5rem; /* Added margin for visual separation */
+    overflow-x: hidden;
   }
 
   .sponsors {
@@ -63,10 +67,19 @@
     width: 95vw; /* Adjusted width as per your design preference */
     padding-top: 1.5rem; /* Adjusted padding */
     gap: 20px;
+    overflow-x: hidden;
   }
 
   .sponsors img {
     height: 80px;
     width: auto;
   }
+
+  @media (max-width: 800px) {
+    .title-holder {
+    padding: 1rem 0rem;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+}
   </style>

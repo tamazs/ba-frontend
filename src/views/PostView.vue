@@ -71,6 +71,7 @@
     padding-bottom: 0.5rem;
     font-weight: 700;
     text-transform: uppercase;
+    text-align: left;
   }
 
   .underline {

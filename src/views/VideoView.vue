@@ -7,9 +7,8 @@
       <div class="dropdown">
         <button class="share-btn" @click="toggleDropdown">Megosztás</button>
         <div v-show="isDropdownVisible" class="dropdown-content">
-          <a href="#" @click.prevent="copyToClipboard">Link másolása</a>
-          <a href="#" @click.prevent="shareToFacebook">Megosztás Facebookon</a>
-          
+          <a href="#" @click.prevent="copyToClipboard"><i class="fas fa-link"></i></a>
+          <a href="#" @click.prevent="shareToFacebook"><i class="fab fa-facebook"></i></a>
         </div>
       </div>
     </div>
@@ -44,7 +43,6 @@
 
 .dropdown-content {
   display: flex;
-  flex-direction: column;
   gap: 1rem;
   padding: 1rem 0;
   width: max-content;
@@ -53,6 +51,11 @@
 .dropdown-content a{
   text-decoration: none;
   color: black;
+  font-size: 1.5rem;
+}
+
+.dropdown-content a:hover{
+  color: var(--c-red);
 }
 
 .category {

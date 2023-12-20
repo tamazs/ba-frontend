@@ -29,7 +29,7 @@ defineProps(getSliceComponentProps(["slice", "index", "slices", "context"]));
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Creates 4 equal columns */
     grid-gap: 10px; /* Adjust the gap between grid items */
-    margin-top: 8rem;
+    margin-top: 2rem;
     padding: 1rem;
 }
 
