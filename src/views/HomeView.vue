@@ -2,6 +2,7 @@
 import LandingHero from '../components/LandingHero.vue';
 import LatestNews from '../components/LatestNews.vue';
 import HomeImages from '../components/HomeImages.vue';
+import NextMatchesSlider from '../components/NextMatchesSlider.vue';
 import { useSeoMeta } from '@unhead/vue'
 
 useSeoMeta({
@@ -17,4 +18,5 @@ useSeoMeta({
   <LandingHero/>
   <LatestNews/>
   <HomeImages/>
+  <NextMatchesSlider />
 </template>

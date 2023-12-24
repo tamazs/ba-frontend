@@ -8,7 +8,7 @@
         <i class="fas fa-times"></i> <!-- Close Icon -->
       </div>
       <RouterLink to="/blogs" @click.native="toggleMenu">HÍREK</RouterLink>
-      <a href="#" @click="toggleMenu">PROGRAM</a>
+      <RouterLink to="/schedule" @click.native="toggleMenu">PROGRAM</RouterLink>
       <RouterLink to="/standing" @click.native="toggleMenu">TABELLA</RouterLink>
       <RouterLink to="/teams" @click.native="toggleMenu">KLUB</RouterLink>
       <RouterLink to="/images" @click.native="toggleMenu">KÉPEK</RouterLink>
