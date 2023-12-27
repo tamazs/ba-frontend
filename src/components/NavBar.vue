@@ -8,7 +8,8 @@
         <i class="fas fa-times"></i> <!-- Close Icon -->
       </div>
       <RouterLink to="/blogs" @click.native="toggleMenu">HÍREK</RouterLink>
-      <RouterLink to="/schedule" @click.native="toggleMenu">PROGRAM</RouterLink>
+      <RouterLink to="/results" @click.native="toggleMenu">EREDMÉNYEK</RouterLink>
+      <RouterLink to="/schedule" @click.native="toggleMenu">MECCSEK</RouterLink>
       <RouterLink to="/standing" @click.native="toggleMenu">TABELLA</RouterLink>
       <RouterLink to="/teams" @click.native="toggleMenu">KLUB</RouterLink>
       <RouterLink to="/images" @click.native="toggleMenu">KÉPEK</RouterLink>
@@ -70,7 +71,7 @@ watch(isMenuOpen, (newValue) => {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 30px;
+  gap: 25px;
 }
 
 .navbar-nav a {

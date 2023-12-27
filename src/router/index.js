@@ -63,6 +63,11 @@ const router = createRouter({
       name: 'schedule',
       component: () => import('../views/ScheduleView.vue')
     },
+    {
+      path: '/results',
+      name: 'results',
+      component: () => import('../views/ResultsView.vue')
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {

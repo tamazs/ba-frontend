@@ -1,4 +1,5 @@
 <template>
+  <h1 class="slider-title">KÖVETKEZŐ MECCSEK</h1>
     <swiper :slidesPerView="slidesPerView" :spaceBetween="10" :navigation="false" :scrollbar="true" :modules="modules"
       class="mySwiper">
         <swiper-slide v-for="match in matchState.matches" :key="match.id" class="swiper-slider">
@@ -45,6 +46,14 @@ const slidesPerView = ref(window.innerWidth <= 767 ? 1 : 4);
 </script>
 
 <style scoped>
+
+.slider-title {
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 0rem 1rem;
+    margin-top: 4rem;
+  }
+
 p {
     margin: 0.5rem;
 }
