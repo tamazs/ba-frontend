@@ -94,4 +94,22 @@ p {
     display: flex;
     flex-direction: column;
 }
+
+@media (max-width: 767px) {
+  .swiper-slider {
+    background-color: white;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    color: black;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 0rem;
+    overflow-wrap: break-word;
+    border: 1px black solid !important;
+}
+}
 </style>

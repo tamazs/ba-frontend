@@ -3,8 +3,8 @@
       <table>
         <thead>
           <tr>
-            <th></th>
-            <th></th>
+            <th v-if="windowWidth > 1130"></th>
+            <th v-if="windowWidth > 1130"></th>
             <th>Csapat</th>
             <th>Mérkőzések</th>
             <th v-if="windowWidth > 1130">Győzelem</th>
@@ -19,8 +19,8 @@
         </thead>
         <tbody>
           <tr v-for="team in standingState.standing" :key="team.team.id" :class="{ 'highlight-team': team.team.id === 262312 }">
-            <td>{{ team.position }}</td>
-            <td>
+            <td v-if="windowWidth > 1130">{{ team.position }}</td>
+            <td v-if="windowWidth > 1130">
                 <img :src="team.team.image" :alt="`Logo of ${team.team.name}`" />
             </td>
             <td class="team-name">{{ team.team.name }}</td>
@@ -76,6 +76,14 @@ const handleResize = () => {
     border-collapse: collapse;
     height: 100%;
 
+  }
+
+  @media (max-width: 767px) {
+      table {
+        width: 100vw;
+      }
+  }
+
     .highlight-team {
         background-color: var(--c-red);
         color: white;
@@ -85,7 +93,6 @@ const handleResize = () => {
       padding: 2rem 1rem;
       text-align: center;
       border-bottom: 1px solid black;
-    }
 
     td img {
         height: 2rem;
@@ -96,5 +103,11 @@ const handleResize = () => {
         text-align: left !important;
     }
   }
+
+  @media (max-width: 767px) {
+        th, td {
+      padding: 2rem 0rem !important;
+  }
+    }
   </style>
   

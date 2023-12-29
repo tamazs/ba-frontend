@@ -8,6 +8,7 @@
             <td class="match-date">
               <div class="season-name">{{ match.season.name }}</div>
               <div class="formatted-date">{{ match.formattedStartDate }}</div>
+              <div class="score">{{ match.homeScore.normaltime }} - {{ match.awayScore.normaltime }}</div>
             </td>
             <td>{{ match.awayTeam.name }}</td>
           </tr>
@@ -22,10 +23,10 @@
 import { onMounted } from 'vue';
 import matches from '../modules/matches';
     
-    const { matchState, getNextMatches } = matches();
+    const { matchState, getLastMatches } = matches();
 
     onMounted(async () => {
-    await getNextMatches();
+    await getLastMatches();
   });
 </script>
 
@@ -76,8 +77,21 @@ import matches from '../modules/matches';
       }
 
       .formatted-date {
+        margin-bottom: 0.5rem;
         font-weight: bold; // Bold for the formatted date
       }
+
+      .score {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      @media (max-width: 767px) {
+        .score {
+        font-size: 1.3rem;
+        font-weight: bold;
+      }
+  }
     }
   }
 }

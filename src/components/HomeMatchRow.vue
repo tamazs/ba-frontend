@@ -1,5 +1,5 @@
 <template>
-    <div v-if="matchImg" class="grid-container">
+    <div v-if="matchImg && matchState.match" class="grid-container">
       <div class="red-box">
         <div class="title-holder">
         <h1 class="team-title">{{ matchState.match.homeTeam.name }}</h1>
@@ -28,7 +28,6 @@ import matches from '../modules/matches';
   });
 
 const { data: matchImg } = useSinglePrismicDocument("meccskep");
-console.log(matchState)
 </script>
 
 <style lang="scss" scoped>

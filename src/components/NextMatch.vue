@@ -5,7 +5,7 @@
         <div class="underline"></div>
         <h1 class="team-title">{{ matchState.match.awayTeam.name }}</h1>
         <p>{{ matchState.match.formattedStartDate }}</p>
-        <p>MAGYAR BAJNOKSAG</p>
+        <p class="seasonName">{{ matchState.match.season.name }}</p>
         <div class="sponsors">
             <img :src="hLogo" alt="Hummel logo">
             <img :src="tLogo" alt="Tippmix logo">
@@ -58,6 +58,11 @@
     padding-bottom: 0.5rem;
     font-weight: 700;
     text-transform: uppercase;
+    text-align: left;
+  }
+
+  .seasonName {
+    text-transform: uppercase;
   }
 
   .underline {
@@ -79,5 +84,34 @@
   .sponsors img {
     height: 80px;
     width: auto;
+  }
+
+  @media (max-width: 767px) {
+    .sponsors img {
+    height: 50px;
+  }
+
+  .sponsors {
+    gap: 10px;
+  }
+
+  .title-holder {
+    width: 100%; /* Adjusted width as per your design preference */
+    height: 100%;
+    margin: 0;
+    padding: 1rem 0rem;
+    background-color: var(--c-red);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Center align the items */
+    justify-content: center;
+  }
+
+  .underline {
+    background-color: white;
+    width: 100vw; /* Adjusted width as per your design preference */
+    height: 1.4rem;
+    margin-top: 0.5rem; /* Added margin for visual separation */
+  }
   }
   </style>

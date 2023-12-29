@@ -69,4 +69,59 @@
     height: 80px;
     width: auto;
   }
+
+  @media (max-width: 767px) {
+    .team-section {
+    position: relative;
+    text-align: center;
+    color: white;
+    max-width: 100vw !important;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5rem;
+    overflow-x: hidden;
+  }
+    .title-holder {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0rem;
+    height: 100%;
+    margin: 0;
+    padding: 1rem 0rem;
+    background-color: var(--c-red);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .team-title {
+    font-size: 2rem;
+    padding-bottom: 0.5rem;
+    font-weight: 700;
+    text-align: center;
+  }
+    .underline {
+    width: 85vw;
+    height: 1rem;
+  }
+
+  .sponsors {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 90vw;
+    padding-top: 2rem;
+    gap: 10px;
+    overflow: hidden;
+  }
+
+  .sponsors img {
+    height: 50px;
+    width: auto;
+  }
+  }
   </style>

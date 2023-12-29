@@ -6,6 +6,9 @@ const getMatches = () => {
         match: {
             homeTeam: { name: '' },
             awayTeam: { name: '' },
+            homeScore: { normaltime: 0 },
+            awayScore: { normaltime: 0 },
+            season: { name: '' },
             startTimestamp: 0 
         },
         matches: []
@@ -35,7 +38,6 @@ const getMatches = () => {
                     minute: '2-digit'
                 }).format(date);
             }
-            console.log(matchState.value.match)
         } catch (error) {
             console.error(error);
         }
@@ -66,7 +68,6 @@ const getMatches = () => {
                     minute: '2-digit'
                 }).format(date);
             }
-            console.log(matchState.value.match)
         } catch (error) {
             console.error(error);
         }
@@ -109,7 +110,6 @@ const getMatches = () => {
                     return event;
                 });
             }
-            console.log(matchState.value.matches);
         } catch (error) {
             console.error(error);
         }
@@ -130,7 +130,7 @@ const getMatches = () => {
             const events = response.data.events;
     
             if (events && Array.isArray(events)) {
-                matchState.value.matches = events.map(event => {
+                const reversedEvents = events.reverse().map(event => {
                     if (event.startTimestamp) {
                         const date = new Date(event.startTimestamp * 1000);
     
@@ -151,12 +151,12 @@ const getMatches = () => {
                     }
                     return event;
                 });
+                matchState.value.matches = reversedEvents;
             }
-            console.log(matchState.value.matches);
         } catch (error) {
             console.error(error);
         }
-    };
+    };    
 
     return {
         matchState,

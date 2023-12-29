@@ -20,39 +20,28 @@
         <img src="/logo.png" alt="Logo" class="navbar-logo">
       </RouterLink>
     </div>
-    <div class="navbar-empty"></div>
   </nav>
 </template>
 
 <script setup>
-import { ref, watch } from 'vue';
+import { ref } from 'vue';
 import { gsap } from 'gsap';
 import { RouterLink } from 'vue-router';
 
 const isMenuOpen = ref(false);
 
 function toggleMenu() {
-  // Check if the screen width is less than or equal to 800px
-  if (window.innerWidth <= 1200) {
-    isMenuOpen.value = !isMenuOpen.value;
-    document.body.style.overflow = isMenuOpen.value ? 'hidden' : '';
-    if (isMenuOpen.value) {
-      gsap.to('.navbar-nav', { x: 0, duration: 0.5 });
-    } else {
-      gsap.to('.navbar-nav', { x: '-100%', duration: 0.5 });
-    }
+  isMenuOpen.value = !isMenuOpen.value;
+  if (isMenuOpen.value) {
+    gsap.to('.navbar-nav', { x: '0%', duration: 0.5 });
+  } else {
+    gsap.to('.navbar-nav', { x: '-100%', duration: 0.5 });
   }
 }
-
-watch(isMenuOpen, (newValue) => {
-  if (window.innerWidth <= 1200) {
-    document.body.style.overflow = newValue ? 'hidden' : '';
-  }
-});
 </script>
 
 
-<style scoped>
+<style lang="scss" scoped>
 .navbar {
   position: fixed;
   top: 0;
@@ -67,40 +56,8 @@ watch(isMenuOpen, (newValue) => {
   background: rgba(255, 255, 255, 0.9);
 }
 
-.navbar-nav {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 25px;
-}
-
-.navbar-nav a {
-  color: black;
-  text-decoration: none;
-}
-
-.navbar-nav a:hover {
-  color: var(--c-red);
-}
-
-.navbar-nav.active {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: var(--c-blue);
-  transform: translateX(-100%);
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
 .burger-menu {
-  display: none;
+  display: flex;
   cursor: pointer;
 }
 
@@ -109,8 +66,43 @@ watch(isMenuOpen, (newValue) => {
   color: #333;
 }
 
+.navbar-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40vw;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--c-blue);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+  display: flex;
+
+  @media (max-width: 1200px) {
+    width: 100vw; /* Full width on mobile */
+  }
+}
+
+.navbar-nav.active {
+  transform: translateX(0);
+}
+
+.navbar-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+
+  @media (max-width: 1200px) {
+    font-size: 2rem;
+  }
+}
+
 .close-menu {
-  display: none;
+  display: flex;
   position: absolute;
   top: 20px;
   right: 20px;
@@ -131,28 +123,5 @@ watch(isMenuOpen, (newValue) => {
 
 .navbar-logo {
   height: 80%;
-}
-
-@media (max-width: 1200px) {
-  .burger-menu {
-    display: flex;
-  }
-
-  .navbar-nav {
-    display: none;
-  }
-
-  .navbar-nav.active {
-    display: flex;
-  }
-
-  .navbar-nav a {
-    color: white;
-    font-size: 2rem;
-  }
-
-  .close-menu {
-    display: flex;
-  }
 }
 </style>

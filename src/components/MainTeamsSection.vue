@@ -23,6 +23,12 @@
   grid-auto-rows: minmax(300px, auto);
 }
 
+@media (max-width: 767px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
 .grid-item {
   position: relative;
   text-decoration: none;
@@ -61,6 +67,12 @@
     transition: transform 0.5s ease; // Animate the transform change
     text-transform: uppercase;
     font-weight: 700;
+  }
+
+  @media (max-width: 767px) {
+    .overlay-text {
+      font-size: 2rem;
+    }
   }
 
   &:hover:after {

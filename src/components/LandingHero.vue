@@ -72,5 +72,55 @@
     height: 80px;
     width: auto;
   }
+
+  @media (max-width: 767px) {
+    .team-photo {
+    width: 100vw;
+    height: 90vh;
+    display: block;
+    object-fit: cover;
+  }
+  
+  .title-holder {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0rem;
+    max-width: 100vw;
+    height: auto;
+    margin: 0;
+    padding: 1rem 2rem;
+    background-color: var(--c-red);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .team-title {
+    font-size: 2rem;
+    padding-bottom: 0.5rem;
+    font-weight: 700;
+    text-align: left;
+  }
+    .underline {
+    width: 85vw;
+    height: 1rem;
+  }
+
+  .sponsors {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 90vw;
+    padding-top: 2rem;
+    gap: 10px;
+    overflow: hidden;
+  }
+
+  .sponsors img {
+    height: 50px;
+    width: auto;
+  }
+  }
   </style>
   
