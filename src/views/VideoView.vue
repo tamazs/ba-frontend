@@ -92,7 +92,7 @@
 
 <script setup>
 import { watchEffect, onMounted, nextTick } from "vue";
-    import { usePrismicDocumentByUID, PrismicImage, PrismicRichText } from "@prismicio/vue";
+    import { usePrismicDocumentByUID } from "@prismicio/vue";
     import { useRoute } from "vue-router";
     import { useSeoMeta } from '@unhead/vue'
     import { ref } from 'vue';
@@ -101,8 +101,6 @@ const isDropdownVisible = ref(false);
 
 const toggleDropdown = () => {
   isDropdownVisible.value = !isDropdownVisible.value;
-  // Log to check if the method is called and the new value of isDropdownVisible
-  console.log('Dropdown toggled: ', isDropdownVisible.value);
 };
 
 const copyToClipboard = async () => {

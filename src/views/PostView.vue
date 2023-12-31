@@ -1,5 +1,6 @@
 <template>
-    <section class="post-section">
+  <div class="post-body">
+    <section class="post-section" v-if="post">
         <PrismicImage :field="post.data.borito" class="post-photo" />
       <div class="title-holder">
         <h1 class="post-title">{{ $prismic.asText(post.data.cim) }}</h1>
@@ -10,6 +11,7 @@
     <section class="post-text-container">
         <PrismicRichText :field="post.data.szoveg" class="post-text"/>
     </section>
+  </div>
   </template>
   
   <script setup>
@@ -37,6 +39,10 @@
   </script>
   
   <style scoped>
+  .post-body {
+    display: flex;
+    flex-direction: column;
+  }
   .post-section {
     position: relative;
     text-align: center;
@@ -99,5 +105,52 @@
   .post-text {
     max-width: 50vw;
   }
+
+  @media (max-width: 800px) {
+    .post-section {
+    position: relative;
+    text-align: center;
+    color: white;
+    max-width: 100vw !important;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5rem;
+    background-color: var(--c-red);
+  }
+
+  .post-photo {
+    width: 100vw;
+    height: 60vh !important;
+    display: block;
+    object-fit: cover;
+  }
+    .title-holder {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0rem;
+    height: auto;
+    margin: 0;
+    padding: 1rem 2rem;
+    background-color: var(--c-red);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  .post-title {
+    font-size: 2rem;
+    padding-bottom: 0.5rem;
+    font-weight: 700;
+    text-align: left;
+  }
+    .underline {
+    width: 85vw;
+    height: 1rem;
+  }
+}
   </style>
   

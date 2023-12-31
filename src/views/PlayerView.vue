@@ -45,7 +45,6 @@ import { watchEffect } from "vue";
     const route = useRoute();
 
     const {data: player } = usePrismicDocumentByUID("jatekos", route.params.uid);
-    console.log(player)
 
     const components = defineSliceZoneComponents({
         klub_ok_: PrevTeams
@@ -116,5 +115,23 @@ import { watchEffect } from "vue";
 
 .clubs-title {
     padding: 0rem 1rem;
+}
+
+@media (max-width: 800px) {
+    .player-head {
+    flex-direction: column-reverse;
+}
+
+.name {
+    max-width: 90vw;
+}
+
+.signature {
+    max-width: 40vw;
+}
+
+.player-text {
+    max-width: 90vw;
+}
 }
 </style>

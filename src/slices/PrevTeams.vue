@@ -53,4 +53,10 @@ const slidesPerView = ref(window.innerWidth <= 767 ? 1 : 4);
     padding: 1rem;
     overflow-wrap: break-word;
 }
+
+@media (max-width: 800px) {
+  .swiper-slide {
+    padding: 0rem;
+}
+}
 </style>

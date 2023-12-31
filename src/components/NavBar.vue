@@ -73,7 +73,8 @@ function toggleMenu() {
   width: 40vw;
   height: 100%;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  padding: 2rem;
   justify-content: center;
   background: var(--c-blue);
   transform: translateX(-100%);
@@ -99,6 +100,11 @@ function toggleMenu() {
   @media (max-width: 1200px) {
     font-size: 2rem;
   }
+}
+
+.navbar-nav a:hover {
+  transform: scale(1.1);
+  transition: all 1s;
 }
 
 .close-menu {
