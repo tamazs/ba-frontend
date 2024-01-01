@@ -21,7 +21,7 @@
           <tr v-for="team in standingState.standing" :key="team.team.id" :class="{ 'highlight-team': team.team.id === 262312 }">
             <td v-if="windowWidth > 1130">{{ team.position }}</td>
             <td v-if="windowWidth > 1130">
-                <img :src="team.team.image" :alt="`Logo of ${team.team.name}`" />
+                <img :src="team.team.image" :alt="`Logo of ${team.team.name}`" class="badges" />
             </td>
             <td class="team-name">{{ team.team.name }}</td>
             <td>{{ team.matches }}</td>
@@ -76,6 +76,10 @@ const handleResize = () => {
     border-collapse: collapse;
     height: 100%;
 
+  }
+
+  .badges {
+    height: 3rem;
   }
 
   @media (max-width: 767px) {

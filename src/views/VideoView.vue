@@ -126,8 +126,10 @@ const shareToFacebook = () => {
     const removeInlineStyles = () => {
   const iframe = document.querySelector('.video-wrapper iframe');
   if (iframe) {
-    iframe.style.width = '100%';
-    iframe.style.height = '100%';
+    iframe.addEventListener('load', () => {
+      iframe.style.width = '100%';
+      iframe.style.height = '100%';
+    });
   }
 };
 
