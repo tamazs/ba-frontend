@@ -94,32 +94,32 @@ watchEffect(() => {
   }
 
   @media (max-width: 800px) {
-    .post-section {
+  .post-section {
     position: relative;
     text-align: center;
     color: white;
-    max-width: 100vw !important;
-    height: 30vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 5rem;
-    background-color: var(--c-red);
-    overflow-x: hidden;
+    max-width: 100vw;
+    min-height: 60vh;
+    padding-top: 0; /* Removed the padding to allow the image to be at the top */
   }
-    .title-holder {
+
+  .post-photo {
+    width: 100vw;
+    height: 60vh; /* Adjusted the height to auto to ensure the image scales correctly */
+    display: block;
+    object-fit: cover;
+    position: relative; /* Ensure the image is positioned relatively to allow z-index to work */
+    z-index: 1; /* Image will be under the red block */
+  }
+  
+  .title-holder {
     position: absolute;
     right: 0;
     left: 0;
-    bottom: 0rem;
-    height: 100%;
-    margin: 0;
+    bottom: 0;
     padding: 1rem 2rem;
     background-color: var(--c-red);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
+    z-index: 2; /* Red block will be above the image */
   }
 
   .post-title {
@@ -128,9 +128,23 @@ watchEffect(() => {
     font-weight: 700;
     text-align: left;
   }
-    .underline {
+
+  .underline {
     width: 85vw;
     height: 1rem;
+  }
+
+  .category {
+    font-size: 1rem;
+    padding: 1rem 0; /* Adjust the padding to position the category text */
+  }
+
+  .post-text-container {
+    padding: 2rem 1rem; /* Adjust the padding to give some space after the red block */
+  }
+
+  .post-text {
+    max-width: 90vw; /* Adjust the max-width to fit the screen */
   }
 }
 </style>
