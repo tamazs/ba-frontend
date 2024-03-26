@@ -26,10 +26,9 @@
         </div>
         <div class="player-info-body">
             <PrismicRichText :field="player.data.sztori" class="player-text"/>
-            <PrismicImage :field="player.data.alairas" class="signature" />
         </div>
         <div class="player-prev-teams">
-            <p class="clubs-title">KLUB(OK)</p>
+            <p class="clubs-title">előző KLUB(OK)</p>
             <SliceZone :slices="player.data.body" :components="components"/>
         </div>
     </div>
@@ -107,14 +106,13 @@ import { watchEffect } from "vue";
     max-width: 50vw;
 }
 
-.signature {
-    max-width: 12vw;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-
 .clubs-title {
     padding: 0rem 1rem;
+    text-transform: uppercase;
+}
+
+.player-prev-teams {
+    margin-top: 3rem;
 }
 
 @media (max-width: 800px) {
@@ -124,10 +122,6 @@ import { watchEffect } from "vue";
 
 .name {
     max-width: 90vw;
-}
-
-.signature {
-    max-width: 40vw;
 }
 
 .player-text {

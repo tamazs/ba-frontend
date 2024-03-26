@@ -55,6 +55,7 @@
     height: auto;
     display: block;
     object-fit: cover;
+    height: 95vh;
   }
   
   .title-holder {

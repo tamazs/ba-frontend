@@ -1,12 +1,12 @@
 <template>
     <div class="standingview-container">
-        <NextMatch />
+        <StandingBanner />
         <StandingsTable />
     </div>
 </template>
 
 <script setup>
-import NextMatch from '../components/NextMatch.vue'
+import StandingBanner from '../components/StandingBanner.vue'
 import StandingsTable from '../components/StandingsTable.vue'
 import { useSeoMeta } from '@unhead/vue'
 

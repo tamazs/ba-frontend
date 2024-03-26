@@ -89,8 +89,7 @@ const handleResize = () => {
   }
 
     .highlight-team {
-        background-color: var(--c-red);
-        color: white;
+        border: 4px solid var(--c-red);
     }
   
     th, td {

@@ -35,10 +35,10 @@ const {data: players } = useAllPrismicDocumentsByType("jatekos", {
 	],
 });
   
-  const slidesPerView = ref(window.innerWidth <= 767 ? 1 : 5);
+  const slidesPerView = ref(window.innerWidth <= 767 ? 1 : 4);
   
   const updateSlidesPerView = () => {
-    slidesPerView.value = window.innerWidth <= 767 ? 1 : 5;
+    slidesPerView.value = window.innerWidth <= 767 ? 1 : 4;
   };
   
   onMounted(() => {

@@ -1,38 +1,14 @@
 <template>
-    <swiper :slidesPerView="slidesPerView" :spaceBetween="10" :navigation="false" :scrollbar="true" :modules="modules"
-      class="mySwiper">
-        <swiper-slide v-for="item in slice.items" :key="item.key" class="swiper-slide">
-            <PrismicText :field="item.klub" />
-        </swiper-slide>
-    </swiper>
+        <ul v-for="item in slice.items" :key="item.key">
+          <li><PrismicText :field="item.klub" /></li>
+        </ul>
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount, defineProps } from 'vue';
-  import { Swiper, SwiperSlide } from 'swiper/vue';
-  import 'swiper/css';
-  import 'swiper/css/navigation';
-  import { Navigation, Scrollbar } from 'swiper/modules';
+import { defineProps } from 'vue';
 import { getSliceComponentProps, PrismicText } from "@prismicio/vue";
 
 defineProps(getSliceComponentProps(["slice", "index", "slices", "context"]));
-
-const slidesPerView = ref(window.innerWidth <= 767 ? 1 : 4);
-  
-  const updateSlidesPerView = () => {
-    slidesPerView.value = window.innerWidth <= 767 ? 1 : 4;
-  };
-  
-  onMounted(() => {
-  
-    window.addEventListener('resize', updateSlidesPerView);
-  });
-  
-  onBeforeUnmount(() => {
-    window.removeEventListener('resize', updateSlidesPerView);
-  });
-  
-  const modules = [Navigation, Scrollbar];
 </script>
 
 <style scoped>

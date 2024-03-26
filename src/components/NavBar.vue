@@ -11,7 +11,7 @@
       <RouterLink to="/results" @click.native="toggleMenu">EREDMÉNYEK</RouterLink>
       <RouterLink to="/schedule" @click.native="toggleMenu">MECCSEK</RouterLink>
       <RouterLink to="/standing" @click.native="toggleMenu">TABELLA</RouterLink>
-      <RouterLink to="/teams" @click.native="toggleMenu">KLUB</RouterLink>
+      <RouterLink to="/teams" @click.native="toggleMenu">CSAPATOK</RouterLink>
       <RouterLink to="/images" @click.native="toggleMenu">KÉPEK</RouterLink>
       <RouterLink to="/videos" @click.native="toggleMenu">VIDEÓK</RouterLink>
     </div>

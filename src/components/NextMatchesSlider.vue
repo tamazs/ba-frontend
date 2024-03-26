@@ -9,9 +9,9 @@
             </div>
             <div class="slider-bottom">
                 <p class="shortDate">{{ match.shortFormattedDate }}</p>
-                <p>{{ match.homeTeam.name }}</p>
+                <p class="team-name">{{ match.homeTeam.name }}</p>
                 <p>-</p>
-                <p>{{ match.awayTeam.name }}</p>
+                <p class="team-name">{{ match.awayTeam.name }}</p>
             </div>
         </swiper-slide>
     </swiper>
@@ -93,6 +93,10 @@ p {
 .slider-top, .slider-bottom {
     display: flex;
     flex-direction: column;
+}
+
+.team-name {
+  font-size: 1.2rem;
 }
 
 @media (max-width: 767px) {
