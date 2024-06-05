@@ -18,7 +18,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="team in standingState.standing" :key="team.team.id" :class="{ 'highlight-team': team.team.id === 262312 }">
+          <tr v-for="team in standingState.standing" :key="team.team.id" id="team-hover" :class="{ 'highlight-team': team.team.id === 262312 }">
             <td v-if="windowWidth > 1130">{{ team.position }}</td>
             <td v-if="windowWidth > 1130">
                 <img :src="team.team.image" :alt="`Logo of ${team.team.name}`" class="badges" />
@@ -63,12 +63,15 @@ const handleResize = () => {
   
   <style lang="scss" scoped>
   .standings-container {
-    overflow-x: auto; // Enables scrolling on small screens
+    overflow-x: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     height: auto;
-    overflow-x: scroll;
+  }
+
+  #team-hover:hover {
+    background-color: rgba(222, 4, 15, 0.3)
   }
   
   table {

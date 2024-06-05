@@ -1,11 +1,13 @@
 <template>
     <TeamsBanner />
     <MainTeamsSection />
+    <UTeams />
 </template>
 
 <script setup>
 import TeamsBanner from '../components/TeamsBanner.vue';
 import MainTeamsSection from '../components/MainTeamsSection.vue';
+import UTeams from '../components/UTeams.vue';
 import { useSeoMeta } from '@unhead/vue'
 
 useSeoMeta({
