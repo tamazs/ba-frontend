@@ -28,7 +28,7 @@
     justify-content: center;
     padding-top: 5rem;
     background-color: var(--c-red);
-    overflow-x: hidden;
+    overflow: hidden;
   }
   
   .title-holder {

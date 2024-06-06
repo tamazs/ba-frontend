@@ -48,7 +48,8 @@ const { data: teams } = useAllPrismicDocumentsByType("u-csapatok", {
 }
 
     .teams-text {
-    margin-right: 1rem;
+    margin-right: 0rem;
+    font-size: 1rem;
 }
 }
 </style>
