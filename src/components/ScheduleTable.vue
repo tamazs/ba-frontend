@@ -1,6 +1,6 @@
 <template>
-    <div class="table-container">
-    <div class="matches-table">
+  <div class="table-container">
+    <div class="matches-table" v-if="matchState.matches.length > 0">
       <table>
         <tbody>
           <tr v-for="match in matchState.matches" :key="match.id">
@@ -14,31 +14,42 @@
         </tbody>
       </table>
     </div>
-</div>
-  </template>
-  
+    <div class="no-nextm" v-else>
+      <p>A következő meccsek jelenleg nem elérhetőek.</p>
+    </div>
+  </div>
+</template>
+
 
 <script setup>
 import { onMounted } from 'vue';
 import matches from '../modules/matches';
-    
-    const { matchState, getNextMatches } = matches();
 
-    onMounted(async () => {
-    await getNextMatches();
-  });
+const { matchState, getNextMatches } = matches();
+
+onMounted(async () => {
+  await getNextMatches();
+});
 </script>
 
 <style lang="scss" scoped>
 .table-container {
   padding: 2rem; // Padding around the entire table
+
+  .no-nextm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
 }
 
 @media (max-width: 767px) {
   .table-container {
     padding: 2rem 0rem !important; // Padding around the entire table
-}
   }
+}
 
 .matches-table {
   table {
@@ -82,5 +93,3 @@ import matches from '../modules/matches';
   }
 }
 </style>
-
-

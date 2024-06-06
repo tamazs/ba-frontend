@@ -21,7 +21,7 @@ import CoffeeTeaArea from '@/assets/CoffeeTeaArea.png';
 import Fonyodi from '@/assets/Fonyodi.png';
 import FrissFm from '@/assets/FrissFm.png';
 import FrissMedia from '@/assets/FrissMedia.png';
-import Hada from '@/assets/Hada.png';
+import Hada from '@/assets/Hada2.png';
 import Kisvarda from '@/assets/Kisvarda.png';
 import MasterGood from '@/assets/MasterGood.png';
 import Nyirzem from '@/assets/Nyirzem.png';

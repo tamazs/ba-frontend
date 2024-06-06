@@ -1,5 +1,9 @@
 <template>
-  <h1 class="slider-title">KÖVETKEZŐ MECCSEK</h1>
+  <div v-if="matchState.matches.length === 0">
+    
+  </div>
+  <div v-else>
+    <h1 class="slider-title">KÖVETKEZŐ MECCSEK</h1>
     <swiper :slidesPerView="slidesPerView" :spaceBetween="10" :navigation="false" :scrollbar="true" :modules="modules"
       class="mySwiper">
         <swiper-slide v-for="match in matchState.matches" :key="match.id" class="swiper-slider">
@@ -15,6 +19,7 @@
             </div>
         </swiper-slide>
     </swiper>
+  </div>
 </template>
 
 <script setup>

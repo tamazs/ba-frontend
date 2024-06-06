@@ -1,5 +1,5 @@
 <template>
-    <div class="table-container">
+  <div class="table-container">
     <div class="matches-table">
       <table>
         <tbody>
@@ -15,19 +15,19 @@
         </tbody>
       </table>
     </div>
-</div>
-  </template>
-  
+  </div>
+</template>
+
 
 <script setup>
 import { onMounted } from 'vue';
 import matches from '../modules/matches';
-    
-    const { matchState, getLastMatches } = matches();
 
-    onMounted(async () => {
-    await getLastMatches();
-  });
+const { matchState, getLastMatches } = matches();
+
+onMounted(async () => {
+  await getLastMatches();
+});
 </script>
 
 <style lang="scss" scoped>
@@ -38,8 +38,8 @@ import matches from '../modules/matches';
 @media (max-width: 767px) {
   .table-container {
     padding: 2rem 0rem !important; // Padding around the entire table
-}
   }
+}
 
 .matches-table {
   table {
@@ -88,13 +88,11 @@ import matches from '../modules/matches';
 
       @media (max-width: 767px) {
         .score {
-        font-size: 1.3rem;
-        font-weight: bold;
+          font-size: 1.3rem;
+          font-weight: bold;
+        }
       }
-  }
     }
   }
 }
 </style>
-
-
